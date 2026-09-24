@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 Academic Intelligence Suite
 
-## Getting Started
+Sebuah dashboard analitik interaktif bergaya Looker Studio yang dibangun menggunakan **Next.js**. Dashboard ini dirancang untuk Institutional Research Office guna memantau performa akademik, kebiasaan belajar, dan segmentasi demografi siswa. 
 
-First, run the development server:
+Data pada dashboard ini terhubung secara *real-time* ke dataset CSV dari Google Spreadsheet, memastikan metrik yang ditampilkan selalu up-to-date tanpa memerlukan database terpisah.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Preview
+**Akses dashboard secara langsung di sini:**  
+👉 **[Lihat Live Dashboard](https://academic-dashboard-sage.vercel.app/)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Fitur Utama
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **🔄 Live Data Connector:** Menarik data secara dinamis dari *published* CSV Google Sheets menggunakan PapaParse.
+* **🎛️ Dynamic Global Filtering:** Filter interaktif (berdasarkan Gender, Final Grade, Internet Access, dan Part-Time Job) yang langsung mengubah kalkulasi KPI, grafik, dan tabel secara instan.
+* **📈 Interactive Data Visualization:** Render grafik performa tinggi (Scatter Plots, Bar Charts) menggunakan Recharts, lengkap dengan *trendline* dan *custom tooltip*.
+* **🎨 Modern Looker Studio UI:** Desain antarmuka profesional yang bersih dan responsif menggunakan Tailwind CSS v4, lengkap dengan animasi transisi yang *smooth*.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Struktur Halaman Dashboard
 
-## Learn More
+Dashboard ini terbagi menjadi 4 modul analitik utama:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Overview (`/`)**
+   Ringkasan metrik level eksekutif (KPI) seperti total siswa, rata-rata nilai, kehadiran, dan jam belajar. Dilengkapi dengan grafik distribusi nilai dasar dan perbandingan gender.
+   
+2. **Academic Performance (`/academic`)**
+   Berfokus pada perkembangan siswa (*grade progression*). Menampilkan analisis regresi linear (nilai sebelumnya vs ujian akhir), matriks mobilitas nilai, dan Tabel Peringatan Dini (*Early Warning*) untuk mengidentifikasi siswa yang berisiko.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Learning Habits (`/habits`)**
+   Analisis gaya hidup siswa. Menampilkan kurva *sweet spot* korelasi jam tidur dengan nilai, dampak jam belajar, serta perbandingan metrik antara siswa yang bekerja paruh waktu atau aktif di ekstrakurikuler.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Student Segmentation (`/segmentation`)**
+   Fokus pada ekuitas dan demografi. Membedah pengaruh tingkat pendidikan orang tua, membagi siswa ke dalam 4 Kuadran Persona (cth: *High Resource*, *Resilient*, *At-Risk*), dan profil risiko pembagian digital (*digital divide*).
 
-## Deploy on Vercel
+## 🛠️ Teknologi yang Digunakan
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Framework:** Next.js (App Router) & React
+* **Styling:** Tailwind CSS 
+* **Charts:** Recharts
+* **Data Parsing:** PapaParse
+* **Deployment:** Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Developed for Institutional Research & Student Affairs Executive Registry.*
