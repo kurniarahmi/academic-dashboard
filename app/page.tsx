@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, CartesianGrid, ZAxis } from 'recharts';
-
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ScatterChart, Scatter, CartesianGrid, ZAxis, Cell } from 'recharts';
 export default function DashboardOverview() {
   const [rawData, setRawData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -263,7 +262,7 @@ export default function DashboardOverview() {
                   <Tooltip contentStyle={{fontSize: '12px', borderRadius: '8px'}} cursor={{fill: '#F3F4F6'}} />
                   <Bar dataKey="score" radius={[4, 4, 0, 0]} label={{ position: 'top', fontSize: 14, fontWeight: 'bold', fill: '#111827' }}>
                     {genderData.map((entry, index) => (
-                      <cell key={`cell-${index}`} fill={entry.name === 'Female' ? '#000000' : '#0058be'} />
+                      <Cell key={`cell-${index}`} fill={entry.name === 'Female' ? '#000000' : '#0058be'} />
                     ))}
                   </Bar>
                 </BarChart>

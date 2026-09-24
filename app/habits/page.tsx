@@ -312,7 +312,7 @@ export default function LearningHabitsPage() {
                   <XAxis type="number" hide />
                   <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{fontSize: 11, fontWeight: 600, fill: '#374151'}} width={120} />
                   <RechartsTooltip cursor={{fill: '#f8fafc'}} contentStyle={{fontSize: '11px', borderRadius: '6px'}} />
-                  <Bar dataKey="avg" radius={[0, 4, 4, 0]} label={{ position: 'right', fill: '#111827', fontSize: 11, fontWeight: 'bold', formatter: (val: number) => `${val} hrs` }}>
+                  <Bar dataKey="avg" radius={[0, 4, 4, 0]} label={{ position: 'right', fill: '#111827', fontSize: 11, fontWeight: 'bold', formatter: (val: any) => `${val} hrs` }}>
                     {studyByGrade.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
